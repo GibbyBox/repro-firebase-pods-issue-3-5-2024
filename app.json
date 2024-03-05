@@ -2,7 +2,7 @@
   "expo": {
     "name": "repro-firebase-pods-issue-3-5-2024",
     "slug": "repro-firebase-pods-issue-3-5-2024",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -16,7 +16,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gibbybox.reprofirebasepodsissue352024"
+      "bundleIdentifier": "com.gibbybox.reprofirebasepodsissue352024",
+			"googleServicesFile": "./stub.plist"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,6 +32,29 @@
       "eas": {
         "projectId": "76083019-07ab-409e-b806-b60afbc37262"
       }
-    }
+    },
+		"plugins": [
+			"@react-native-firebase/app",
+			"@react-native-firebase/auth",
+			"./withAppCheck",
+			[ "expo-build-properties", { 
+				"ios": {
+					"useFrameworks": "static"
+					// "extraPods": [
+					// 	{ "name": "FirebaseAppCheckInterop", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseAuthInterop", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseCoreExtension", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseCoreInternal", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseFirestoreInternal", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseInstallations", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseMessagingInterop", "version": "= 10.21.0" },
+					// 	{ "name": "FirebaseSharedSwift", "version": "= 10.21.0" },
+					// 	{ "name": "GoogleUtilities", "version": "= 7.12.0" },
+					// 	{ "name": "PromisesObjC", "version": "= 2.3.1" },
+					// 	{ "name": "leveldb-library", "version": "= 1.22.3" }
+					// ]
+				}
+			}]
+		]
   }
 }
